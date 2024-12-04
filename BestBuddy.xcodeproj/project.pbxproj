@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		24EED9F31AB67068EA1BBF1D /* Pods_BestBuddy_BestBuddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BEACFA842387E3BA497CB2 /* Pods_BestBuddy_BestBuddyUITests.framework */; };
+		50828F3591382D5830270249 /* Pods_BestBuddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0A898223D40E4826FB2070 /* Pods_BestBuddyTests.framework */; };
+		CB274FA5D3610973BC49162F /* Pods_BestBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA33B92F81CB22220E4D8F0 /* Pods_BestBuddy.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0CCFA4FF2CFDA4C9000B81AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,38 +33,30 @@
 		0CCFA4ED2CFDA4C7000B81AF /* BestBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCFA4FE2CFDA4C9000B81AF /* BestBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCFA5082CFDA4C9000B81AF /* BestBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0A898223D40E4826FB2070 /* Pods_BestBuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA33B92F81CB22220E4D8F0 /* Pods_BestBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29420DFEF0838AD355C42375 /* Pods-BestBuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuddyTests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuddyTests/Pods-BestBuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39BEACFA842387E3BA497CB2 /* Pods_BestBuddy_BestBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuddy_BestBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F2166C0AD20EA19BE4909D9 /* Pods-BestBuddy-BestBuddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuddy-BestBuddyUITests.release.xcconfig"; path = "Target Support Files/Pods-BestBuddy-BestBuddyUITests/Pods-BestBuddy-BestBuddyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		57BD657F0F4CA0962772126E /* Pods-BestBuddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuddyTests.release.xcconfig"; path = "Target Support Files/Pods-BestBuddyTests/Pods-BestBuddyTests.release.xcconfig"; sourceTree = "<group>"; };
+		839965D22E1E16B6DC38C8BE /* Pods-BestBuddy-BestBuddyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuddy-BestBuddyUITests.debug.xcconfig"; path = "Target Support Files/Pods-BestBuddy-BestBuddyUITests/Pods-BestBuddy-BestBuddyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8920224CB89A72E284BAB1E4 /* Pods-BestBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuddy.debug.xcconfig"; path = "Target Support Files/Pods-BestBuddy/Pods-BestBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		A4B002D2BFC1458C1B07DB0F /* Pods-BestBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuddy.release.xcconfig"; path = "Target Support Files/Pods-BestBuddy/Pods-BestBuddy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0CCFA5C02CFDC165000B81AF /* Exceptions for "BestBuddy" folder in "BestBuddy" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Firebase/GoogleService-Info.plist",
-			);
-			target = 0CCFA4EC2CFDA4C7000B81AF /* BestBuddy */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0CCFA4EF2CFDA4C7000B81AF /* BestBuddy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0CCFA5C02CFDC165000B81AF /* Exceptions for "BestBuddy" folder in "BestBuddy" target */,
-			);
 			path = BestBuddy;
 			sourceTree = "<group>";
 		};
 		0CCFA5012CFDA4C9000B81AF /* BestBuddyTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = BestBuddyTests;
 			sourceTree = "<group>";
 		};
 		0CCFA50B2CFDA4C9000B81AF /* BestBuddyUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = BestBuddyUITests;
 			sourceTree = "<group>";
 		};
@@ -69,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB274FA5D3610973BC49162F /* Pods_BestBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50828F3591382D5830270249 /* Pods_BestBuddyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24EED9F31AB67068EA1BBF1D /* Pods_BestBuddy_BestBuddyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +98,7 @@
 				0CCFA50B2CFDA4C9000B81AF /* BestBuddyUITests */,
 				0CCFA4EE2CFDA4C7000B81AF /* Products */,
 				1516571E07626DAB6E42FB8F /* Pods */,
+				2EFF97398C2640DED9997BCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,8 +115,24 @@
 		1516571E07626DAB6E42FB8F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8920224CB89A72E284BAB1E4 /* Pods-BestBuddy.debug.xcconfig */,
+				A4B002D2BFC1458C1B07DB0F /* Pods-BestBuddy.release.xcconfig */,
+				839965D22E1E16B6DC38C8BE /* Pods-BestBuddy-BestBuddyUITests.debug.xcconfig */,
+				3F2166C0AD20EA19BE4909D9 /* Pods-BestBuddy-BestBuddyUITests.release.xcconfig */,
+				29420DFEF0838AD355C42375 /* Pods-BestBuddyTests.debug.xcconfig */,
+				57BD657F0F4CA0962772126E /* Pods-BestBuddyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2EFF97398C2640DED9997BCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA33B92F81CB22220E4D8F0 /* Pods_BestBuddy.framework */,
+				39BEACFA842387E3BA497CB2 /* Pods_BestBuddy_BestBuddyUITests.framework */,
+				0D0A898223D40E4826FB2070 /* Pods_BestBuddyTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,10 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CCFA5122CFDA4C9000B81AF /* Build configuration list for PBXNativeTarget "BestBuddy" */;
 			buildPhases = (
+				1E62A79370B907CC93CF73C3 /* [CP] Check Pods Manifest.lock */,
 				0CCFA4E92CFDA4C7000B81AF /* Sources */,
 				0CCFA4EA2CFDA4C7000B81AF /* Frameworks */,
 				0CCFA4EB2CFDA4C7000B81AF /* Resources */,
 				0CCFA5C12CFDC71C000B81AF /* Firebase Setup */,
+				11B5134418195BB930014A07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,6 +165,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CCFA5152CFDA4C9000B81AF /* Build configuration list for PBXNativeTarget "BestBuddyTests" */;
 			buildPhases = (
+				C9B7F3E8868A231927AC6BA5 /* [CP] Check Pods Manifest.lock */,
 				0CCFA4FA2CFDA4C9000B81AF /* Sources */,
 				0CCFA4FB2CFDA4C9000B81AF /* Frameworks */,
 				0CCFA4FC2CFDA4C9000B81AF /* Resources */,
@@ -166,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CCFA5182CFDA4C9000B81AF /* Build configuration list for PBXNativeTarget "BestBuddyUITests" */;
 			buildPhases = (
+				AD384FE5153EBD703B51BEAD /* [CP] Check Pods Manifest.lock */,
 				0CCFA5042CFDA4C9000B81AF /* Sources */,
 				0CCFA5052CFDA4C9000B81AF /* Frameworks */,
 				0CCFA5062CFDA4C9000B81AF /* Resources */,
+				4D3719898AB7575992BFB6A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,7 +291,107 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Name of the resource to copy\nINFO_PLIST_FILE=GoogleService-Info.plist\n\n# Get references of the plist file\nRELEASE_INFO_PLIST_FILE=${PROJECT_DIR}/${TARGET_NAME}/Firebase/${INFO_PLIST_FILE}\n\n# Make sure the release version exists\necho \"Looking for ${INFO_PLIST_FILE} in ${RELEASE_INFO_PLIST_FILE}\"\nif [ ! -f $RELEASE_INFO_PLIST_FILE ] ; then\n    echo \"File GoogleService-Info.plist (release) not found.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the plist file\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Copying ${INFO_PLIST_FILE} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy the appropiate file to app bundle\necho \"File ${RELEASE_INFO_PLIST_FILE} copied\"\ncp \"${RELEASE_INFO_PLIST_FILE}\" \"${PLIST_DESTINATION}\"\n";
+			shellScript = "# Name of the resource to copy\nINFO_PLIST_FILE=GoogleService-Info.plist\n\n# Get references of the plist file\nRELEASE_INFO_PLIST_FILE=${PROJECT_DIR}/${TARGET_NAME}/SupportFiles/Firebase/${INFO_PLIST_FILE}\n\n# Make sure the release version exists\necho \"Looking for ${INFO_PLIST_FILE} in ${RELEASE_INFO_PLIST_FILE}\"\nif [ ! -f $RELEASE_INFO_PLIST_FILE ] ; then\n    echo \"File GoogleService-Info.plist (release) not found.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the plist file\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Copying ${INFO_PLIST_FILE} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy the appropiate file to app bundle\necho \"File ${RELEASE_INFO_PLIST_FILE} copied\"\ncp \"${RELEASE_INFO_PLIST_FILE}\" \"${PLIST_DESTINATION}\"\n";
+		};
+		11B5134418195BB930014A07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuddy/Pods-BestBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuddy/Pods-BestBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuddy/Pods-BestBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E62A79370B907CC93CF73C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BestBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D3719898AB7575992BFB6A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuddy-BestBuddyUITests/Pods-BestBuddy-BestBuddyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BestBuddy-BestBuddyUITests/Pods-BestBuddy-BestBuddyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuddy-BestBuddyUITests/Pods-BestBuddy-BestBuddyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD384FE5153EBD703B51BEAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BestBuddy-BestBuddyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9B7F3E8868A231927AC6BA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BestBuddyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -427,13 +550,14 @@
 		};
 		0CCFA5132CFDA4C9000B81AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8920224CB89A72E284BAB1E4 /* Pods-BestBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BestBuddy/BestBuddy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BestBuddy/SupportFiles/BestBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BestBuddy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BestBuddy/SupportFiles/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -464,13 +588,14 @@
 		};
 		0CCFA5142CFDA4C9000B81AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B002D2BFC1458C1B07DB0F /* Pods-BestBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BestBuddy/BestBuddy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BestBuddy/SupportFiles/BestBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BestBuddy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BestBuddy/SupportFiles/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -501,6 +626,7 @@
 		};
 		0CCFA5162CFDA4C9000B81AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29420DFEF0838AD355C42375 /* Pods-BestBuddyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +649,7 @@
 		};
 		0CCFA5172CFDA4C9000B81AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57BD657F0F4CA0962772126E /* Pods-BestBuddyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +672,7 @@
 		};
 		0CCFA5192CFDA4C9000B81AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 839965D22E1E16B6DC38C8BE /* Pods-BestBuddy-BestBuddyUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -566,6 +694,7 @@
 		};
 		0CCFA51A2CFDA4C9000B81AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F2166C0AD20EA19BE4909D9 /* Pods-BestBuddy-BestBuddyUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
