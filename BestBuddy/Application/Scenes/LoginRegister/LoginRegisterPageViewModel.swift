@@ -10,19 +10,21 @@ import Foundation
 final class LoginRegisterPageViewModel: ObservableObject {
     
     private let authUseCase: AuthUseCaseProtocol
-    private var username: String = ""
-    private var password: String = ""
-    var result: User?
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var isLoading: Bool = false
     
     init(authUseCase: AuthUseCaseProtocol) {
         self.authUseCase = authUseCase
     }
     
     func onLoginButtonTapped() {
-        result = authUseCase.login(username: username, password: password)
+        isLoading = true
+        authUseCase.login(email: email, password: password)
     }
     
     func onRegisterButtonTapped() {
-        result = authUseCase.register(username: username, password: password)
+        isLoading = true
+        authUseCase.register(email: email, password: password)
     }
 }

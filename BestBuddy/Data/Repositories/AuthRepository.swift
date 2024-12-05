@@ -6,8 +6,9 @@
 //
 
 protocol AuthRepositoryProtocol {
-    func login(username: String, password: String) -> Any
-    func register(username: String, password: String) -> Any
+    func login(email: String, password: String)
+    func register(email: String, password: String)
+    func logout()
 }
 
 final class AuthRepository: AuthRepositoryProtocol {
@@ -17,11 +18,15 @@ final class AuthRepository: AuthRepositoryProtocol {
         self.firebaseAuthService = firebaseAuthService
     }
     
-    func login(username: String, password: String) -> Any {
-        firebaseAuthService.login(username: username, password: password)
+    func login(email: String, password: String) {
+        firebaseAuthService.login(email: email, password: password)
     }
     
-    func register(username: String, password: String) -> Any  {
-        firebaseAuthService.register(username: username, password: password)
+    func register(email: String, password: String)  {
+        firebaseAuthService.register(email: email, password: password)
+    }
+    
+    func logout() {
+        firebaseAuthService.logout()
     }
 }

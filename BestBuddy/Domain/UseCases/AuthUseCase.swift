@@ -6,8 +6,9 @@
 //
 
 protocol AuthUseCaseProtocol {
-    func login(username: String, password: String) -> User?
-    func register(username: String, password: String) -> User?
+    func login(email: String, password: String)
+    func register(email: String, password: String)
+    func logout()
 }
 
 final class AuthUseCase: AuthUseCaseProtocol {
@@ -18,12 +19,16 @@ final class AuthUseCase: AuthUseCaseProtocol {
         self.repository = repository
     }
     
-    func login(username: String, password: String) -> User? {
-        repository.login(username: username, password: password) as? User
+    func login(email: String, password: String) {
+        repository.login(email: email, password: password)
     }
     
-    func register(username: String, password: String) -> User? {
-        repository.register(username: username, password: password) as? User
+    func register(email: String, password: String){
+        repository.register(email: email, password: password)
+    }
+    
+    func logout() {
+        repository.logout()
     }
     
     
