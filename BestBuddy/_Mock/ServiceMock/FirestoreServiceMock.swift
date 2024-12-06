@@ -6,12 +6,19 @@
 //
 
 final class FirestoreServiceMock: FirestoreServiceProtocol {
-    func getUsers() -> Any {
-        return ""
+    func getUsers() async throws -> [User] {
+        return []
     }
     
-    func getUser() -> Any {
-        return ""
+    func addUser(user: User) async throws {
+        
     }
     
+    func deleteUser(uid: String) async throws {
+        
+    }
+    
+    func getUser(uid: String) async throws -> User? {
+        return nil
+    }
 }
