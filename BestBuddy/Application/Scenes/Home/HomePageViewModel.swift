@@ -31,14 +31,9 @@ final class HomepageViewModel: ObservableObject {
         authUseCase.logout()
     }
     
-    @MainActor
-    func getUsers() async throws {
-        users = try await userUseCase.getUsers()
-    }
-    
-    func getUserViewModel(uid: String, imageURL: URL?) -> UserImageViewModel {
-        let imageState: ImageState = imageURL == nil ? .empty : .preload(imageURL)
-        let vm = UserImageViewModel(uid: uid, imageState: imageState, userUseCase: userUseCase)
+    func getUserViewModel(for user: User, isUploading: Binding<Bool>) -> UserImageViewModel {
+        let imageState: ImageState = .preload(user.imagePath())
+        let vm = UserImageViewModel(uid: user.uid ?? "", imageState: imageState, userUseCase: userUseCase, isUploading: isUploading)
         return vm
     }
 }

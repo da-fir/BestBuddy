@@ -5,6 +5,7 @@
 //  Created by Darul Firmansyah on 04/12/24.
 //
 import Foundation
+import FirebaseStorage
 
 struct User: Codable, Identifiable {
     let id: String = UUID().uuidString
@@ -12,10 +13,13 @@ struct User: Codable, Identifiable {
     let email: String?
     let phoneNumber: String?
     let gender: Gender?
-    let imageUrl: String?
     
     var displayString: String {
         (email ?? "") + " " + (gender?.text ?? "")
+    }
+    
+    func imagePath() -> String {
+        return "/profileimages/\(uid ?? "")"
     }
 }
 

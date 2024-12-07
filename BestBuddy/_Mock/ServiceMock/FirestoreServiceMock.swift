@@ -6,19 +6,7 @@
 //
 
 final class FirestoreServiceMock: FirestoreServiceProtocol {
-    func getUsers() async throws -> [User] {
-        return []
-    }
-    
-    func addUser(user: User) async throws {
+    func getUsers(completion: @escaping (([User]?) -> Void)) {
         
-    }
-    
-    func deleteUser(uid: String) async throws {
-        
-    }
-    
-    func getUser(uid: String) async throws -> User? {
-        return nil
     }
 }

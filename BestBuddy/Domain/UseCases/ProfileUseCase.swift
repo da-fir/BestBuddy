@@ -8,12 +8,8 @@
 import UIKit
 
 protocol UserUseCaseProtocol {
-    func getUsers() async throws -> [User]
-    func addUser(user: User) async throws
-    func deleteUser(uid: String) async throws
-    func getUser(uid: String) async throws -> User?
-    func uploadImage(image: UIImage, for uid: String,
-                     completion: @escaping ((String?,  Error?) -> Void))
+    func getUsers(completion: @escaping (([User]?) -> Void))
+    func uploadImage(image: UIImage, for uid: String, completion: @escaping ((String?,  Error?) -> Void))
 }
 
 final class UserUseCase: UserUseCaseProtocol {
@@ -23,20 +19,8 @@ final class UserUseCase: UserUseCaseProtocol {
         self.repository = repository
     }
     
-    func getUsers() async throws -> [User] {
-        try await repository.getUsers()
-    }
-    
-    func addUser(user: User) async throws {
-        try await repository.addUser(user: user)
-    }
-    
-    func deleteUser(uid: String) async throws {
-        try await repository.deleteUser(uid: uid)
-    }
-    
-    func getUser(uid: String) async throws -> User? {
-        try await repository.getUser(uid: uid)
+    func getUsers(completion: @escaping (([User]?) -> Void)) {
+        repository.getUsers(completion: completion)
     }
     
     func uploadImage(image: UIImage, for uid: String, completion: @escaping ((String?,  Error?) -> Void)) {

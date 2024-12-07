@@ -11,29 +11,39 @@ import SwiftUI
 
 @main
 struct BestBuddyApp: App {
-    @StateObject var authManager: AppManager
+    @StateObject var appManager: AppManager
+    @StateObject var authManager: AuthManager
     
     init() {
         FirebaseApp.configure()
-        let appManager = AppManager()
-        _authManager = StateObject(wrappedValue: appManager)
+        let authManager = AuthManager()
+        let appManager = AppManager(userUseCase: UserUseCase(repository: UserRepository(firestoreService: FirestoreService(), storageService: FirebaseStorageService())))
+        _appManager = StateObject(wrappedValue: appManager)
+        _authManager = StateObject(wrappedValue: authManager)
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appManager)
                 .environmentObject(authManager)
         }
     }
 }
 
 struct ContentView: View {
-    @EnvironmentObject var authManager: AppManager
+    @EnvironmentObject var authManger: AuthManager
 
     var body: some View {
-        if authManager.authState != .signedOut {
+        mainView()
+    }
+    
+    @ViewBuilder
+    func mainView() -> some View {
+        if authManger.authState != .signedOut {
             HomePageView()
-        } else {
+        }
+        else {
             LoginRegisterPageView()
         }
     }

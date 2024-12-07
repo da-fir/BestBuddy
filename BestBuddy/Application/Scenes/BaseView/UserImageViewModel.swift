@@ -9,7 +9,7 @@ import PhotosUI
 
 enum ImageState {
     case empty
-    case preload(URL?)
+    case preload(String)
     case loading(Progress)
     case success(UIImage)
     case failure(Error)
@@ -23,6 +23,7 @@ final class UserImageViewModel: ObservableObject {
     private let uid: String
     private let userUseCase: UserUseCaseProtocol
     @Published var imageState: ImageState = .empty
+    @Binding var isUploading: Bool
 
     @Published var imageSelection: PhotosPickerItem? = nil {
         didSet {
@@ -35,10 +36,11 @@ final class UserImageViewModel: ObservableObject {
         }
     }
     
-    init(uid: String, imageState: ImageState, userUseCase: UserUseCaseProtocol) {
+    init(uid: String, imageState: ImageState, userUseCase: UserUseCaseProtocol, isUploading: Binding<Bool>) {
         self.uid = uid
         self.imageState = imageState
         self.userUseCase = userUseCase
+        self._isUploading = isUploading
     }
 
     // MARK: - Private Methods
@@ -64,8 +66,9 @@ final class UserImageViewModel: ObservableObject {
     }
     
     private func upload(_ image: UIImage) {
+        isUploading = true
         userUseCase.uploadImage(image: image, for: uid) { output, error in
-            print(output)
+            self.isUploading = false
         }
     }
 }

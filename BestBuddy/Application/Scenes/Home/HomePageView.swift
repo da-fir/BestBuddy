@@ -9,6 +9,7 @@ import PhotosUI
 import SwiftUI
 
 struct HomePageView: View {
+    @EnvironmentObject var appManager: AppManager
     @ObservedObject var viewModel = HomepageViewModel(
         authUseCase: AuthUseCase(
             repository: AuthRepository(
@@ -26,23 +27,20 @@ struct HomePageView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.users) { user in
-                    NavigationLink(destination: EditableCircularProfileImage(viewModel: viewModel.getUserViewModel(uid: user.uid ?? "", imageURL:  URL(string: user.imageUrl ?? "")))) {
-                        HStack {
-                            SmallCircleAsyncImage(imageUrl: URL(string: user.imageUrl ?? ""))
-                            Text(user.displayString)
-                                .font(.system(size: 16, weight: .bold, design: .default))
-                        }
+                ForEach(appManager.users) { user in
+                    NavigationLink(destination: EditableCircularProfileImage(viewModel: viewModel.getUserViewModel(for: user, isUploading: $appManager.isUploading))) {
+                        CellView(user: user)
                     }
                 }
             }
             .navigationTitle(viewModel.title)
             
+            
             .toolbar {
                 Button {
                     viewModel.logout()
                 } label: {
-                    Image(systemName: "person.circle")
+                    Image(systemName: "x.circle.fill")
                 }
                 
                 Button {
@@ -51,11 +49,10 @@ struct HomePageView: View {
                     Image(systemName: "person.badge.plus")
                 }
                 
-            }
-        }
-        .onAppear {
-            Task {
-                try await viewModel.getUsers()
+                if appManager.isUploading {
+                    ProgressView()
+                }
+                
             }
         }
         

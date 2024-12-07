@@ -7,10 +7,7 @@
 import Foundation
 
 protocol UserRepositoryProtocol {
-    func getUsers() async throws -> [User]
-    func addUser(user: User) async throws
-    func deleteUser(uid: String) async throws
-    func getUser(uid: String) async throws -> User?
+    func getUsers(completion: @escaping (([User]?) -> Void))
     func uploadImage(imageData: Data, for uid: String, completion: @escaping ((String?,  Error?) -> Void))
 }
 
@@ -26,20 +23,8 @@ final class UserRepository: UserRepositoryProtocol {
         self.storageService = storageService
     }
     
-    func getUsers() async throws -> [User] {
-        try await firestoreService.getUsers()
-    }
-    
-    func addUser(user: User) async throws {
-        try await firestoreService.addUser(user: user)
-    }
-    
-    func deleteUser(uid: String) async throws {
-        try await firestoreService.deleteUser(uid: uid)
-    }
-    
-    func getUser(uid: String) async throws -> User? {
-        try await firestoreService.getUser(uid: uid)
+    func getUsers(completion: @escaping (([User]?) -> Void))  {
+        firestoreService.getUsers(completion: completion)
     }
     
     func uploadImage(imageData: Data, for uid: String, completion: @escaping ((String?,  Error?) -> Void)) {

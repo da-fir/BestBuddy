@@ -13,8 +13,8 @@ struct ProfileImage: View {
     
     var body: some View {
         switch imageState {
-        case .preload(let url):
-            BigCircleAsyncImage(imageUrl: url)
+        case .preload(let path):
+            BigCircleAsyncImage(path: path)
         case .success(let image):
             Image(uiImage: image).resizable()
         case .loading:
@@ -54,7 +54,13 @@ struct CircularProfileImage: View {
 struct SmallCircleAsyncImage: View {
     let imageUrl: URL?
     var body: some View {
-        AsyncImage(url: imageUrl)
+        AsyncImage(url: imageUrl, content: { image in
+            image.resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: 32, maxHeight: 32)
+        },
+                   placeholder: { }
+        )
             .frame(width: 32, height: 32)
             .background {
                 Circle().fill(
@@ -69,21 +75,35 @@ struct SmallCircleAsyncImage: View {
     }
 }
 
+import FirebaseStorage
+
 struct BigCircleAsyncImage: View {
-    let imageUrl: URL?
+    @State var imageUrl: URL?
+    let path: String
     var body: some View {
-        AsyncImage(url: imageUrl)
-            .frame(width: 100, height: 100)
-            .background {
-                Circle().fill(
-                    LinearGradient(
-                        colors: [.yellow, .orange],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
+        AsyncImage(url: imageUrl, content: { image in
+            image.resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: 300, maxHeight: 100)
+        },
+                   placeholder: {
+            ProgressView()
+        })
+        .frame(width: 100, height: 100)
+        .background {
+            Circle().fill(
+                LinearGradient(
+                    colors: [.yellow, .orange],
+                    startPoint: .top,
+                    endPoint: .bottom
                 )
-            }
-            .clipShape(Circle())
+            )
+        }
+        .clipShape(Circle())
+        .task {
+            let ref = Storage.storage().reference(withPath: path)
+            imageUrl = try? await ref.downloadURL()
+        }
     }
 }
 
