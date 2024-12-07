@@ -9,6 +9,7 @@ import PhotosUI
 import SwiftUI
 
 struct HomePageView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var appManager: AppManager
     @ObservedObject var viewModel = HomepageViewModel(
         authUseCase: AuthUseCase(
@@ -37,6 +38,7 @@ struct HomePageView: View {
                         }
                     }
                 }
+                .padding()
             }
             .navigationTitle(viewModel.title)
             
@@ -49,15 +51,15 @@ struct HomePageView: View {
                 }
                 
                 Button {
-                    // action
+                    appManager.isDarkMode.toggle()
                 } label: {
-                    Image(systemName: "person.badge.plus")
+                    appManager.isDarkMode ? Image(systemName: "moon.fill") : Image(systemName: "moon")
+                    
                 }
                 
                 if appManager.isUploading {
                     ProgressView()
                 }
-                
             }
         }
         

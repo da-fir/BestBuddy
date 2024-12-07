@@ -27,6 +27,7 @@ struct BestBuddyApp: App {
             ContentView()
                 .environmentObject(appManager)
                 .environmentObject(authManager)
+                .preferredColorScheme(appManager.isDarkMode ? .dark : .light)
         }
     }
 }
