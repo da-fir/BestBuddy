@@ -36,52 +36,56 @@ struct CellView: View {
             }
             
             ZStack {
-                AsyncImage(url: imageUrl)
-                    .frame(height: 180)
-                    .frame(maxWidth: .infinity)
-                    .background {
-                        RoundedRectangle(cornerSize: CGSize(width: 16, height: 16))
-                            .foregroundStyle(.gray)
-                    }
-                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 16, height: 16)))
-                    .overlay(alignment: .bottom) {
-                        HStack {
-                            Image(uiImage: UIImage(named: "cod_round") ?? UIImage())
-                                .resizable()
-                                .frame(width: 40.0, height: 40.0)
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                            Image(uiImage: UIImage(named: "ml") ?? UIImage())
-                                .resizable()
-                                .frame(width: 40.0, height: 40.0)
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                                .overlay {
-                                    ZStack {
-                                        Circle()
-                                            .foregroundStyle(colorScheme == .dark ? Color.gray : Color.white)
-                                            .opacity(0.5)
-                                        Text("+3")
-                                            .font(.system(size: 16, weight: .bold, design: .monospaced))
-                                            .foregroundStyle(
-                                                colorScheme == .dark ? .white : .black
-                                            )
-                                        
-                                    }
+                AsyncImage(url: imageUrl, content: { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fill)
+                },
+                           placeholder: { })
+                .frame(height: 180)
+                .frame(maxWidth: .infinity)
+                .background {
+                    RoundedRectangle(cornerSize: CGSize(width: 16, height: 16))
+                        .foregroundStyle(.gray)
+                }
+                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 16, height: 16)))
+                .overlay(alignment: .bottom) {
+                    HStack {
+                        Image(uiImage: UIImage(named: "cod_round") ?? UIImage())
+                            .resizable()
+                            .frame(width: 40.0, height: 40.0)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                        Image(uiImage: UIImage(named: "ml") ?? UIImage())
+                            .resizable()
+                            .frame(width: 40.0, height: 40.0)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .overlay {
+                                ZStack {
+                                    Circle()
+                                        .foregroundStyle(colorScheme == .dark ? Color.gray : Color.white)
+                                        .opacity(0.5)
+                                    Text(user.gender == .male ? "+3" : "+5")
+                                        .font(.system(size: 16, weight: .bold, design: .monospaced))
+                                        .foregroundStyle(
+                                            colorScheme == .dark ? .white : .black
+                                        )
+                                    
                                 }
-                            
-                            Spacer()
-                            
-                            Image(uiImage: UIImage(named: colorScheme == .dark ? "sound_dark" : "sound_light") ?? UIImage())
-                                .resizable()
-                                .frame(width: 40.0, height: 40.0)
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                            
-                            
-                        }
-                        .offset(x: 0, y: 15)
+                            }
+                        
+                        Spacer()
+                        
+                        Image(uiImage: UIImage(named: colorScheme == .dark ? "sound_dark" : "sound_light") ?? UIImage())
+                            .resizable()
+                            .frame(width: 40.0, height: 40.0)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                        
+                        
                     }
+                    .offset(x: 0, y: 15)
+                }
             }
             .task {
                 let ref = Storage.storage().reference(withPath: user.imagePath())
@@ -98,7 +102,7 @@ struct CellView: View {
                         .resizable()
                         .frame(width: 16.0, height: 16.0)
                     
-                    Text("4.9")
+                    Text(user.rating?.description ?? "")
                         .font(.system(size: 16, weight: .bold, design: .monospaced))
                         .lineLimit(1)
                         .foregroundStyle(
@@ -119,7 +123,7 @@ struct CellView: View {
                         .frame(width: 16.0, height: 16.0)
                     
                     HStack(spacing: 0) {
-                        Text("110.")
+                        Text("\(user.price?.description ?? "").")
                             .font(.system(size: 16, weight: .bold, design: .monospaced))
                             .lineLimit(1)
                             .foregroundStyle(

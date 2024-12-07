@@ -13,6 +13,8 @@ struct User: Codable, Identifiable {
     let email: String?
     let phoneNumber: String?
     let gender: Gender?
+    let price: Int?
+    let rating: Int?
     
     var displayString: String {
         let name: String = String(email?.split(separator: "@").first ?? "")

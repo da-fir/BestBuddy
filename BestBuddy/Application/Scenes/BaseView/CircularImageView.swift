@@ -1,5 +1,5 @@
 //
-//  CircularImageView.swift
+//  RoundedRectangleImageView.swift
 //  BestBuddy
 //
 //  Created by Darul Firmansyah on 06/12/24.
@@ -14,7 +14,7 @@ struct ProfileImage: View {
     var body: some View {
         switch imageState {
         case .preload(let path):
-            BigCircleAsyncImage(path: path)
+            BigRoundedRectangleAsyncImage(path: path)
         case .success(let image):
             Image(uiImage: image).resizable()
         case .loading:
@@ -31,16 +31,16 @@ struct ProfileImage: View {
     }
 }
 
-struct CircularProfileImage: View {
+struct RoundedRectangleProfileImage: View {
     let imageState: ImageState
     
     var body: some View {
         ProfileImage(imageState: imageState)
             .scaledToFill()
-            .clipShape(Circle())
+            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 16, height: 16)))
             .frame(width: 100, height: 100)
             .background {
-                Circle().fill(
+                RoundedRectangle(cornerSize: CGSize(width: 16, height: 16)).fill(
                     LinearGradient(
                         colors: [.yellow, .orange],
                         startPoint: .top,
@@ -48,49 +48,24 @@ struct CircularProfileImage: View {
                     )
                 )
             }
-    }
-}
-
-struct SmallCircleAsyncImage: View {
-    let imageUrl: URL?
-    var body: some View {
-        AsyncImage(url: imageUrl, content: { image in
-            image.resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: 32, maxHeight: 32)
-        },
-                   placeholder: { }
-        )
-            .frame(width: 32, height: 32)
-            .background {
-                Circle().fill(
-                    LinearGradient(
-                        colors: [.yellow, .orange],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
-            }
-            .clipShape(Circle())
     }
 }
 
 import FirebaseStorage
 
-struct BigCircleAsyncImage: View {
+struct BigRoundedRectangleAsyncImage: View {
     @State var imageUrl: URL?
     let path: String
     var body: some View {
         AsyncImage(url: imageUrl, content: { image in
             image.resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: 300, maxHeight: 100)
         },
                    placeholder: {
         })
         .frame(width: 100, height: 100)
         .background {
-            Circle().fill(
+            RoundedRectangle(cornerSize: CGSize(width: 16, height: 16)).fill(
                 LinearGradient(
                     colors: [.yellow, .orange],
                     startPoint: .top,
@@ -98,7 +73,7 @@ struct BigCircleAsyncImage: View {
                 )
             )
         }
-        .clipShape(Circle())
+        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 16, height: 16)))
         .task {
             let ref = Storage.storage().reference(withPath: path)
             imageUrl = try? await ref.downloadURL()
@@ -106,11 +81,11 @@ struct BigCircleAsyncImage: View {
     }
 }
 
-struct EditableCircularProfileImage: View {
+struct EditableRoundedRectangleProfileImage: View {
     @ObservedObject var viewModel: UserImageViewModel
     
     var body: some View {
-        CircularProfileImage(imageState: viewModel.imageState)
+        RoundedRectangleProfileImage(imageState: viewModel.imageState)
             .overlay(alignment: .bottomTrailing) {
                 PhotosPicker(selection: $viewModel.imageSelection,
                              matching: .images,
