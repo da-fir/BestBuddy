@@ -15,7 +15,8 @@ struct User: Codable, Identifiable {
     let gender: Gender?
     
     var displayString: String {
-        (email ?? "") + " " + (gender?.text ?? "")
+        let name: String = String(email?.split(separator: "@").first ?? "")
+        return name
     }
     
     func imagePath() -> String {

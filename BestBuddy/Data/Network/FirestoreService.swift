@@ -14,6 +14,8 @@ final class FirestoreService: FirestoreServiceProtocol {
     private let userCollection: CollectionReference = Firestore.firestore().collection("USERS")
     
     func getUsers(completion: @escaping (([User]?) -> Void)) {
+        completion([User(email: "ney@ney.com", phoneNumber: "121221", gender: .female)])
+        return
         let db = Firestore.firestore()
         db.collection("USERS").addSnapshotListener { [weak self] (snapshot, error) in
             guard let self

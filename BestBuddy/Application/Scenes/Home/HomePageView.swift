@@ -26,10 +26,15 @@ struct HomePageView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(appManager.users) { user in
-                    NavigationLink(destination: EditableCircularProfileImage(viewModel: viewModel.getUserViewModel(for: user, isUploading: $appManager.isUploading))) {
-                        CellView(user: user)
+            ScrollView {
+                LazyVGrid(
+                    columns: [GridItem(spacing: 8), GridItem(spacing: 8)],
+                    spacing: 8
+                ) {
+                    ForEach(appManager.users) { user in
+                        NavigationLink(destination: EditableCircularProfileImage(viewModel: viewModel.getUserViewModel(for: user, isUploading: $appManager.isUploading))) {
+                            CellView(user: user)
+                        }
                     }
                 }
             }
